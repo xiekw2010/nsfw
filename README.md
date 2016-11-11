@@ -1,3 +1,16 @@
+## 本地环境安装
+
+### 前端
+
+#### 安装前端依赖
+npm i
+
+#### build 前端代码
+webpack
+
+### 后端 python
+pip install Flask request jsonify
+
 ## docker 安装
 
 ### build
