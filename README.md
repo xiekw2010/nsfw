@@ -1,3 +1,15 @@
+## docker 安装
+
+### build
+docker build --rm -t web_nsfw .
+
+### run
+docker run --name web_nsfw_tse -p 9001:5001 -it web_nsfw
+
+### debug bash
+docker exec -it web_nsfw_tse bash
+
+
 # nsfw
 This is a simple web app written in Python http://itoolset.com/nsfw
 
