@@ -17,11 +17,13 @@ pip install Flask request jsonify
 docker build --rm -t web_nsfw .
 
 ### run
-docker run --name web_nsfw_tse -p 9001:5001 -it web_nsfw
+docker run --name web_nsfw_tse -p 5001:5001 -it web_nsfw
 
 ### debug bash
 docker exec -it web_nsfw_tse bash
 
+### bash 里查看端口使用情况
+lsof -i tcp:9001(5001)
 
 # nsfw
 This is a simple web app written in Python http://itoolset.com/nsfw
