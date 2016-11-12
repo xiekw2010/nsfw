@@ -25,6 +25,29 @@ docker exec -it web_nsfw_tse bash
 ### bash 里查看端口使用情况
 lsof -i tcp:9001(5001)
 
+### 阿里云操作
+
+## 登录
+sudo docker login --username=xiekw2016 registry.cn-hangzhou.aliyuncs.com
+z57482148
+
+sudo docker tag [ImageId] registry.cn-hangzhou.aliyuncs.com/xiekw2016/nsfw:latest
+
+sudo docker push registry.cn-hangzhou.aliyuncs.com/xiekw2016/nsfw:latest
+
+## 登录跳板机
+
+ssh root@121.43.168.164 （Moo57482148）
+
+docker login --username=xiekw2016 registry.cn-hangzhou.aliyuncs.com
+
+sudo docker pull registry.cn-hangzhou.aliyuncs.com/xiekw2016/nsfw:latest
+
+## 线上跑服务
+
+docker run --name web_nsfw -p 5001:5001 -it registry.cn-hangzhou.aliyuncs.com/xiekw2016/nsfw:latest
+
+
 # nsfw
 This is a simple web app written in Python http://itoolset.com/nsfw
 
@@ -67,7 +90,7 @@ Date: Thu, 13 Oct 2016 09:03:28 GMT
 }
 ```
 
-`status` will be `"success"` if the operation is successful. It will be `"error"` when something erros happened.
+`status` will be `"success"` if the operation is successful. It will be `"error"` when something errors happened.
 
 ## License
 nsfw is released under the MIT license. See LICENSE for details.

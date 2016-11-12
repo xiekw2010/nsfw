@@ -12,8 +12,6 @@ from classify_nsfw import calc
 @app.route('/nsfw')
 def index():
     return app.send_static_file('index.html')
-    # return 'hello, nsfw!'
-
 
 @app.route('/nsfw/api/0/score', methods=['POST'])
 def score():
@@ -28,4 +26,4 @@ def score():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5001, debug=True)
+    app.run(host='0.0.0.0', port=5001, debug=False)
