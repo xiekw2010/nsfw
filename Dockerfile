@@ -16,7 +16,9 @@ RUN rm -rf /usr/src/app/.vscode
 # python 报错, 需要启动的时候执行这个脚本
 RUN ln -s /dev/null /dev/raw1394
 
-RUN pip install Flask request jsonify
+RUN pip install Flask -i http://pypi.douban.com/simple
+RUN pip install request -i http://pypi.douban.com/simple
+RUN pip install jsonify -i http://pypi.douban.com/simple
 
 EXPOSE 5001
 
